@@ -6,7 +6,9 @@ import Modal from "react-modal";
 
 import { GlobalStyle } from "./styles/globals";
 
-Modal.setAppElement('#root');
+import { NewTransactionModal } from "./components/NewTransactionModal";
+
+Modal.setAppElement("#root");
 
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
@@ -14,7 +16,6 @@ export function App() {
 
   function handleOpenNewTransactionModal() {
     setIsNewTransactionModalOpen(true);
-    console.log("dmsjhdjhsdjshu");
   }
 
   function handleCloseNewTransactionModal() {
@@ -27,13 +28,11 @@ export function App() {
 
       <Dashboard />
 
-      <Modal
+      <NewTransactionModal
         isOpen={isNewTransactionModalOpen}
         onRequestClose={handleCloseNewTransactionModal}
-      >
-        <h2>Cadastrar transação</h2>
-      </Modal>
-
+      />
+      
       <GlobalStyle />
     </>
   );
